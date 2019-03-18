@@ -11,8 +11,3 @@ class Button extends Component {
 	}
 }
 export default Button;
-
-const wrapper = document.getElementById("create-article-form");
-wrapper ? ReactDOM.render(
-	<Button name="Submit"/>
-, wrapper) : false;
