@@ -1,34 +1,34 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 class Input extends Component {
+	constructor() {
+		super();
+		this.state = {
+			error: false,
+			success: false,
+			value: ''
+		};
+		this.handleChange = this.handleChange.bind(this);
+	}
 	handleChange(event){
-		console.log(event.target.value);
+		this.setState({ value: event.target.value });
 	}
 	render() {
+		let label;
+		this.props.label ? label = <label>{this.props.label}</label> : label;
 		return (
-			<input onChange={this.handleChange} placeholder={this.props.placeholder}/>
+			<div className='form-group'>
+				{label}
+				<input 
+					type={this.props.type}
+					onChange={this.handleChange} 
+					placeholder={this.props.placeholder}
+					disabled={this.props.disabled}
+					readOnly={this.props.readOnly}
+					className={'form-control ' + this.props.className + (this.state.error ? ' is-invalid' : '') + (this.state.success ? ' is-valid' : '')}
+				/>
+			</div>
 		);
 	}
 };
-// const Input = ({ label, text, type, id, value, handleChange }) => (
-// 	<div className="form-group">
-// 		<label htmlFor={label}>{text}</label>
-// 		<input
-// 			type={type}
-// 			className="form-control"
-// 			id={id}
-// 			value={value}
-// 			onChange={handleChange}
-// 			required
-// 		/>
-// 	</div>
-// );
-// Input.propTypes = {
-// 	label: PropTypes.string.isRequired,
-// 	text: PropTypes.string.isRequired,
-// 	type: PropTypes.string.isRequired,
-// 	id: PropTypes.string.isRequired,
-// 	value: PropTypes.string.isRequired,
-// 	handleChange: PropTypes.func.isRequired
-// };
 export default Input;
