@@ -1,0 +1,86 @@
+body{
+	font-family: $font-primary;
+	color: $neutral-900;
+	font-size: $body-medium;
+}
+
+.divider{
+	width: 100%;
+	height: 1px;
+	background-color: $border-color;
+}
+
+// Loading
+.page-loader{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	// background-color: lighten($brand, 24%);
+	background-color: $brand;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1060;
+	.loader-content{
+		text-align: center;
+		.title{
+			animation: flash 3s ease infinite;
+			color: white;
+			font-weight: 600;
+			font-size: 18px;
+		}
+	}
+	.logo-img{
+		width: 120px;
+	}
+}
+
+// Animation
+@keyframes move2Left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes personalityProgressTracker {
+  0% {
+    width: 15%;
+  }
+  50% {
+    width: 13%;
+  }
+  100% {
+    width: 15%;
+  }
+}
+
+@keyframes personalityProgressText {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+	transform: rotate(3deg);
+  }
+  50% {
+	transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.move2Left {
+	-webkit-animation-name: move2Left;
+	animation-name: move2Left;
+}
+
+
+[class^="ri-"], [class*=" ri-"]{
+	vertical-align: middle;
+}

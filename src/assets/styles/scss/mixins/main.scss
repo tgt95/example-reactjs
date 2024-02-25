@@ -1,0 +1,105 @@
+@mixin main-gradient{
+    background-image: linear-gradient(to right, #fff7f7 0%, #ffc3bf 100%);
+}
+
+// Button
+@mixin btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .3s ease;
+    border-radius: $radius-xs;
+    &:hover, &:focus, &:active, &.active{
+        text-decoration: none;
+    }
+    >i{
+       font-weight: 400;
+       vertical-align: sub;
+    }
+}
+
+// Sizes
+@mixin btn-md {
+    >i{
+        font-size: $h5;
+    }
+    &.btn-just-icon{
+        width: $input-height-md;
+        height: $input-height-md;
+        padding: $space-s;
+    }
+    &:not(.btn-just-icon){
+        padding: 0 $space-s;
+        line-height: $input-height-md;
+    }
+    &:not(.icon-right):not(.btn-just-icon){
+        >i{
+            margin-right: $space-2-xs;
+        }
+    }
+    &.icon-right{
+        :not(.btn-just-icon){
+            >i{
+                margin-left: $space-2-xs;
+            }
+        }
+    }
+}
+@mixin btn-lg {
+    line-height: $input-height-lg;
+    padding: 0 $space-m;
+}
+
+// Variant
+@mixin btn-brand {
+    color: white;
+    background-color: $brand;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    &:hover, &:focus, &:active, &.active{
+        color: white;
+        background-color: darken($brand, 5%);
+    }
+}
+@mixin btn-secondary {
+    color: $brand;
+    background-color: lighten($brand, 32%);
+    &:hover, &:focus, &:active, &.active{
+        color: white;
+        background-color: $brand;
+    }
+}
+@mixin btn-default {
+    color: $neutral-900;
+    background-color: $neutral-200;
+    &:hover, &:focus, &:active, &.active{
+        color: $neutral-900;;
+        background-color: $neutral-300;
+    }
+}
+@mixin btn-ghost {
+    color: $neutral-900;
+    background-color: transparent;
+    &:hover{
+        color: $brand;
+        background-color: lighten($brand, 30%);
+    }
+    &:focus, &:active, &.active{
+        color: $brand;
+        background-color: lighten($brand, 26%);
+    }
+}
+@mixin btn-ghost-brand {
+    color: $brand;
+    background-color: transparent;
+    &:hover{
+        color: $brand;
+        background-color: lighten($brand, 30%);
+    }
+    &:focus, &:active, &.active{
+        color: $brand;
+        background-color: lighten($brand, 26%);
+    }
+}
