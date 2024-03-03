@@ -1,0 +1,27 @@
+.btn{
+    // transition: color .3s ease, border .3s ease, box-shadow .3s ease;
+    @include btn;
+    &:not(.btn-lg):not(.btn-sm):not(.btn-xs){
+        @include btn-md;
+    }
+}
+
+.btn-brand{
+    @include btn-brand;
+}
+
+.btn-secondary{
+    @include btn-secondary;
+}
+
+.btn-default{
+    @include btn-default;
+}
+
+.btn-ghost{
+    @include btn-ghost;
+}
+
+.btn-ghost-brand{
+    @include btn-ghost-brand;
+}
